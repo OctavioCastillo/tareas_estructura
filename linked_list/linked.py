@@ -42,6 +42,34 @@ class LinkedList:
 
         print('Nulo')
 
+    def invertir(self):
+
+        anterior = None
+        actual = self.head
+
+        while actual is not None:
+            temp = actual.next  # Guarda el siguiente nodo
+            actual.next = anterior  # Invertir el puntero 'next' del nodo actual
+            anterior = actual  # Mueve el puntero 'anterior' al nodo actual
+            actual = temp  # Mueve el puntero 'actual' al siguiente nodo en la lista original
+
+        self.head = anterior  # Ajusta el head de la lista a la nueva cabeza
+
+    
+    def detectar_ciclo(self):
+        tortuga = self.head
+        liebre = self.head
+        
+        while liebre and liebre.next:
+            tortuga = tortuga.next  # Mueve tortuga un paso
+            liebre = liebre.next.next  # Mueve liebre dos pasos
+            
+            if tortuga == liebre:
+                return True  # Hay un ciclo
+        
+        return False  # No hay ciclo
+
+
     def eliminar_dato(self, dato):
 
         actual = self.head
