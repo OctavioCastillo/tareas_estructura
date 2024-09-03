@@ -17,7 +17,7 @@ class pila:
         return self.elementos[len(self.elementos)-1]
         
 # size dar el tamaÃ±o de la pila
-    def size(slef):
+    def size(self):
         return len(self.elementos)
         
 # es_vacia indica si la pila estÃ¡ vacÃ­a
