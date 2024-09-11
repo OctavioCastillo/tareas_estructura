@@ -32,6 +32,27 @@ class LinkedList():
         print('None')
 
 
+def interlace_list(lista1:LinkedList, lista2:LinkedList):
+    result_list = LinkedList()
+    current1 = lista1.head
+    current2 = lista2.head
+    while current1.next is not None and current2.next is not None:
+        result_list.insert(Node(current1.data))
+        result_list.insert(Node(current2.data))
+        current1 = current1.next
+        current2 = current2.next
+    
+    while current1 is not None:
+        result_list.insert(Node(current1.data))
+        current1 = current1.next
+
+    while current2 is not None:
+        result_list.insert(Node(current2.data))
+        current2 = current2.next
+    
+    return result_list
+
+
 lista1 = LinkedList()
 lista2 = LinkedList()
 
@@ -45,3 +66,6 @@ for _ in "abcdefjhij":
 
 lista1.showlist()
 lista2.showlist()
+
+combined_list = interlace_list(lista1, lista2)
+combined_list.showlist()
