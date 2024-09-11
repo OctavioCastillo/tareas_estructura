@@ -22,5 +22,5 @@ class pila:
         
 # es_vacia indica si la pila estÃ¡ vacÃ­a
     def es_vacia(self):
-        return size() == 0
+        return self.size() == 0
     
